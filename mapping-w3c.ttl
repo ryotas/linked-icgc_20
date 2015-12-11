@@ -1,0 +1,413 @@
+@prefix d2rq: <http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#> .
+@prefix map: <#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix vocab: <vocab/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+
+map:donor__project a d2rq:PropertyBridge;
+   d2rq:belongsToClassMap map:donor;
+   d2rq:join "donor.project_code = project.project_code";
+   d2rq:property vocab:project;
+   d2rq:refersToClassMap map:project .
+
+map:donor_identifier a d2rq:PropertyBridge;
+   d2rq:belongsToClassMap map:donor;
+   d2rq:column "donor.donor_id";
+   d2rq:property dct:identifier .
+
+map:donor_label a d2rq:PropertyBridge;
+   d2rq:belongsToClassMap map:donor;
+   d2rq:column "donor.donor_id";
+   d2rq:property rdfs:label .
+
+map:donor_donor_id a d2rq:PropertyBridge;
+   d2rq:belongsToClassMap map:donor;
+   d2rq:column "donor.donor_id";
+   d2rq:property vocab:donor_id .
+
+map:donor_sex a d2rq:PropertyBridge;
+   d2rq:belongsToClassMap map:donor;
+   d2rq:column "donor.donor_sex";
+   d2rq:property vocab:sex .
+
+map:donor_vital_status a d2rq:PropertyBridge;
+   d2rq:belongsToClassMap map:donor;
+   d2rq:column "donor.donor_vital_status";
+   d2rq:property vocab:vital_status .
+
+map:donor_disease_status_last_followup a d2rq:PropertyBridge;
+   d2rq:belongsToClassMap map:donor;
+   d2rq:column "donor.disease_status_last_followup";
+   d2rq:property vocab:disease_status_last_followup .
+
+map:donor_relapse_type a d2rq:PropertyBridge;
+   d2rq:belongsToClassMap map:donor;
+   d2rq:column "donor.donor_relapse_type";
+   d2rq:property vocab:relapse_type .
+
+map:donor_age_at_diagnosis a d2rq:PropertyBridge;
+   d2rq:belongsToClassMap map:donor;
+   d2rq:column "donor.donor_age_at_diagnosis";
+   d2rq:property vocab:age_at_diagnosis .
+
+map:donor_age_at_enrollment a d2rq:PropertyBridge;
+   d2rq:belongsToClassMap map:donor;
+   d2rq:column "donor.donor_age_at_enrollment";
+   d2rq:property vocab:age_at_enrollment .
+
+map:donor_age_at_last_followup a d2rq:PropertyBridge;
+   d2rq:belongsToClassMap map:donor;
+   d2rq:column "donor.donor_age_at_last_followup";
+   d2rq:property vocab:age_at_last_followup .
+
+map:donor_relapse_interval a d2rq:PropertyBridge;
+   d2rq:belongsToClassMap map:donor;
+   d2rq:column "donor.donor_relapse_interval";
+   d2rq:property vocab:relapse_interval .
+
+map:donor_diagnosis_icd10 a d2rq:PropertyBridge;
+   d2rq:belongsToClassMap map:donor;
+   d2rq:column "donor.donor_diagnosis_icd10";
+   d2rq:property vocab:diagnosis_icd10 .
+
+map:donor_tumour_staging_system_at_diagnosis a d2rq:PropertyBridge;
+   d2rq:belongsToClassMap map:donor;
+   d2rq:column "donor.donor_tumour_staging_system_at_diagnosis";
+   d2rq:property vocab:tumour_staging_system_at_diagnosis .
+
+map:donor_tumour_stage_at_diagnosis a d2rq:PropertyBridge;
+   d2rq:belongsToClassMap map:donor;
+   d2rq:column "donor.donor_tumour_stage_at_diagnosis";
+   d2rq:property vocab:tumour_stage_at_diagnosis .
+
+map:donor_tumour_stage_at_diagnosis_supplemental a d2rq:PropertyBridge;
+   d2rq:belongsToClassMap map:donor;
+   d2rq:column "donor.donor_tumour_stage_at_diagnosis_supplemental";
+   d2rq:property vocab:tumour_stage_at_diagnosis_supplemental .
+
+map:donor_interval_of_last_followup a d2rq:PropertyBridge;
+   d2rq:belongsToClassMap map:donor;
+   d2rq:column "donor.donor_interval_of_last_followup";
+   d2rq:property vocab:interval_of_last_followup .
+
+map:donor_survival_time a d2rq:PropertyBridge;
+   d2rq:belongsToClassMap map:donor;
+   d2rq:column "donor.donor_survival_time";
+   d2rq:property vocab:survival_time .
+
+map:project_identifier a d2rq:PropertyBridge;
+   d2rq:belongsToClassMap map:project;
+   d2rq:column "project.project_code";
+   d2rq:property dct:identifier .
+
+map:project_label a d2rq:PropertyBridge;
+   d2rq:belongsToClassMap map:project;
+   d2rq:column "project.project_code";
+   d2rq:property rdfs:label .
+
+map:project_project_code a d2rq:PropertyBridge;
+   d2rq:belongsToClassMap map:project;
+   d2rq:column "project.project_code";
+   d2rq:property vocab:project_code .
+
+map:project_project_name a d2rq:PropertyBridge;
+   d2rq:belongsToClassMap map:project;
+   d2rq:column "project.project_name";
+   d2rq:property vocab:project_name .
+
+map:project_primary_site a d2rq:PropertyBridge;
+   d2rq:belongsToClassMap map:project;
+   d2rq:column "project.primary_site";
+   d2rq:property vocab:primary_site .
+
+map:project_tumour_type a d2rq:PropertyBridge;
+   d2rq:belongsToClassMap map:project;
+   d2rq:column "project.tumour_type";
+   d2rq:property vocab:tumour_type .
+
+map:project_tumour_subtype a d2rq:PropertyBridge;
+   d2rq:belongsToClassMap map:project;
+   d2rq:column "project.tumour_subtype";
+   d2rq:property vocab:tumour_subtype .
+
+map:project_countries a d2rq:PropertyBridge;
+   d2rq:belongsToClassMap map:project;
+   d2rq:column "project.countries";
+   d2rq:property vocab:countries .
+
+map:ssm_detection__donor a d2rq:PropertyBridge;
+   d2rq:belongsToClassMap map:ssm_detection;
+   d2rq:join "ssm_detection.donor_id = donor.donor_id";
+   d2rq:property vocab:donor;
+   d2rq:refersToClassMap map:donor .
+
+map:ssm_detection__project a d2rq:PropertyBridge;
+   d2rq:belongsToClassMap map:ssm_detection;
+   d2rq:join "ssm_detection.project_code = project.project_code";
+   d2rq:property vocab:project;
+   d2rq:refersToClassMap map:project .
+
+map:ssm_detection__ssm_mutation a d2rq:PropertyBridge;
+   d2rq:belongsToClassMap map:ssm_detection;
+   d2rq:join "ssm_detection.mutation_id = ssm_mutation.mutation_id";
+   d2rq:property vocab:mutation;
+   d2rq:refersToClassMap map:ssm_mutation .
+
+map:ssm_detection_alignment_algorithm a d2rq:PropertyBridge;
+   d2rq:belongsToClassMap map:ssm_detection;
+   d2rq:column "ssm_detection.alignment_algorithm";
+   d2rq:property vocab:alignment_algorithm .
+
+map:ssm_detection_base_calling_algorithm a d2rq:PropertyBridge;
+   d2rq:belongsToClassMap map:ssm_detection;
+   d2rq:column "ssm_detection.base_calling_algorithm";
+   d2rq:property vocab:base_calling_algorithm .
+
+map:ssm_detection_biological_validation_platform a d2rq:PropertyBridge;
+   d2rq:belongsToClassMap map:ssm_detection;
+   d2rq:column "ssm_detection.biological_validation_platform";
+   d2rq:property vocab:biological_validation_platform .
+
+map:ssm_detection_biological_validation_status a d2rq:PropertyBridge;
+   d2rq:belongsToClassMap map:ssm_detection;
+   d2rq:column "ssm_detection.biological_validation_status";
+   d2rq:property vocab:biological_validation_status .
+
+map:ssm_detection_donor_id a d2rq:PropertyBridge;
+   d2rq:belongsToClassMap map:ssm_detection;
+   d2rq:column "ssm_detection.donor_id";
+   d2rq:property vocab:donor_id .
+
+map:ssm_detection_experimental_protocol a d2rq:PropertyBridge;
+   d2rq:belongsToClassMap map:ssm_detection;
+   d2rq:column "ssm_detection.experimental_protocol";
+   d2rq:property vocab:experimental_protocol .
+
+map:ssm_detection_matched_icgc_sample_id a d2rq:PropertyBridge;
+   d2rq:belongsToClassMap map:ssm_detection;
+   d2rq:column "ssm_detection.matched_icgc_sample_id";
+   d2rq:property vocab:atched_icgc_sample_id .
+
+map:ssm_detection_mutant_allele_read_count a d2rq:PropertyBridge;
+   d2rq:belongsToClassMap map:ssm_detection;
+   d2rq:column "ssm_detection.mutant_allele_read_count";
+   d2rq:property vocab:mutant_allele_read_count .
+
+map:ssm_detection_mutation_id a d2rq:PropertyBridge;
+   d2rq:belongsToClassMap map:ssm_detection;
+   d2rq:column "ssm_detection.mutation_id";
+   d2rq:property vocab:mutation_id .
+
+map:ssm_detection_other_analysis_algorithm a d2rq:PropertyBridge;
+   d2rq:belongsToClassMap map:ssm_detection;
+   d2rq:column "ssm_detection.other_analysis_algorithm";
+   d2rq:property vocab:other_analysis_algorithm .
+
+map:ssm_detection_platform a d2rq:PropertyBridge;
+   d2rq:belongsToClassMap map:ssm_detection;
+   d2rq:column "ssm_detection.platform";
+   d2rq:property vocab:platform .
+
+map:ssm_detection_probability a d2rq:PropertyBridge;
+   d2rq:belongsToClassMap map:ssm_detection;
+   d2rq:column "ssm_detection.probability";
+   d2rq:property vocab:probability .
+
+map:ssm_detection_project_code a d2rq:PropertyBridge;
+   d2rq:belongsToClassMap map:ssm_detection;
+   d2rq:column "ssm_detection.project_code";
+   d2rq:property vocab:project_code .
+
+map:ssm_detection_quality_score a d2rq:PropertyBridge;
+   d2rq:belongsToClassMap map:ssm_detection;
+   d2rq:column "ssm_detection.quality_score";
+   d2rq:property vocab:quality_score .
+
+map:ssm_detection_raw_data_accession a d2rq:PropertyBridge;
+   d2rq:belongsToClassMap map:ssm_detection;
+   d2rq:column "ssm_detection.raw_data_accession";
+   d2rq:property vocab:raw_data_accession .
+
+map:ssm_detection_raw_data_repository a d2rq:PropertyBridge;
+   d2rq:belongsToClassMap map:ssm_detection;
+   d2rq:column "ssm_detection.raw_data_repository";
+   d2rq:property vocab:raw_data_repository .
+
+map:ssm_detection_sample_id a d2rq:PropertyBridge;
+   d2rq:belongsToClassMap map:ssm_detection;
+   d2rq:column "ssm_detection.sample_id";
+   d2rq:property vocab:sample_id .
+
+map:ssm_detection_seq_coverage a d2rq:PropertyBridge;
+   d2rq:belongsToClassMap map:ssm_detection;
+   d2rq:column "ssm_detection.seq_coverage";
+   d2rq:property vocab:seq_coverage .
+
+map:ssm_detection_sequencing_strategy a d2rq:PropertyBridge;
+   d2rq:belongsToClassMap map:ssm_detection;
+   d2rq:column "ssm_detection.sequencing_strategy";
+   d2rq:property vocab:sequencing_strategy .
+
+map:ssm_detection_specimen_id a d2rq:PropertyBridge;
+   d2rq:belongsToClassMap map:ssm_detection;
+   d2rq:column "ssm_detection.specimen_id";
+   d2rq:property vocab:specimen_id .
+
+map:ssm_detection_submitted_matched_sample_id a d2rq:PropertyBridge;
+   d2rq:belongsToClassMap map:ssm_detection;
+   d2rq:column "ssm_detection.submitted_matched_sample_id";
+   d2rq:property vocab:submitted_matched_sample_id .
+
+map:ssm_detection_submitted_sample_id a d2rq:PropertyBridge;
+   d2rq:belongsToClassMap map:ssm_detection;
+   d2rq:column "ssm_detection.submitted_sample_id";
+   d2rq:property vocab:submitted_sample_id .
+
+map:ssm_detection_total_read_count a d2rq:PropertyBridge;
+   d2rq:belongsToClassMap map:ssm_detection;
+   d2rq:column "ssm_detection.total_read_count";
+   d2rq:property vocab:total_read_count .
+
+map:ssm_detection_variation_calling_algorithm a d2rq:PropertyBridge;
+   d2rq:belongsToClassMap map:ssm_detection;
+   d2rq:column "ssm_detection.variation_calling_algorithm";
+   d2rq:property vocab:variation_calling_algorithm .
+
+map:ssm_detection_verification_platform a d2rq:PropertyBridge;
+   d2rq:belongsToClassMap map:ssm_detection;
+   d2rq:column "ssm_detection.verification_platform";
+   d2rq:property vocab:verification_platform .
+
+map:ssm_detection_verification_status a d2rq:PropertyBridge;
+   d2rq:belongsToClassMap map:ssm_detection;
+   d2rq:column "ssm_detection.verification_status";
+   d2rq:property vocab:verification_status .
+
+map:ssm_effect__ssm_mutation a d2rq:PropertyBridge;
+   d2rq:belongsToClassMap map:ssm_effect;
+   d2rq:join "ssm_effect.mutation_id = ssm_mutation.mutation_id";
+   d2rq:property vocab:mutation;
+   d2rq:refersToClassMap map:ssm_mutation .
+
+map:ssm_effect_gene_affected a d2rq:PropertyBridge;
+   d2rq:belongsToClassMap map:ssm_effect;
+   d2rq:property vocab:gene_affected;
+   d2rq:uriPattern "Gene/@@ssm_effect.gene_affected@@" .
+
+map:ssm_effect_consequence_type a d2rq:PropertyBridge;
+   d2rq:belongsToClassMap map:ssm_effect;
+   d2rq:column "ssm_effect.consequence_type";
+   d2rq:property vocab:consequence_type .
+
+map:ssm_effect_aa_mutation a d2rq:PropertyBridge;
+   d2rq:belongsToClassMap map:ssm_effect;
+   d2rq:column "ssm_effect.aa_mutation";
+   d2rq:property vocab:aa_mutation .
+
+map:ssm_effect_cds_mutation a d2rq:PropertyBridge;
+   d2rq:belongsToClassMap map:ssm_effect;
+   d2rq:column "ssm_effect.cds_mutation";
+   d2rq:property vocab:cds_mutation .
+
+map:ssm_effect_transcript_affected a d2rq:PropertyBridge;
+   d2rq:belongsToClassMap map:ssm_effect;
+   d2rq:column "ssm_effect.transcript_affected";
+   d2rq:property vocab:transcript_affected .
+
+map:ssm_effect_gene_build_version a d2rq:PropertyBridge;
+   d2rq:belongsToClassMap map:ssm_effect;
+   d2rq:column "ssm_effect.gene_build_version";
+   d2rq:property vocab:gene_build_version .
+
+map:ssm_mutation_identifier a d2rq:PropertyBridge;
+   d2rq:belongsToClassMap map:ssm_mutation;
+   d2rq:column "ssm_mutation.mutation_id";
+   d2rq:property dct:identifier .
+
+map:ssm_mutation_label a d2rq:PropertyBridge;
+   d2rq:belongsToClassMap map:ssm_mutation;
+   d2rq:column "ssm_mutation.mutation_id";
+   d2rq:property rdfs:label .
+
+map:ssm_mutation_mutation_id a d2rq:PropertyBridge;
+   d2rq:belongsToClassMap map:ssm_mutation;
+   d2rq:column "ssm_mutation.mutation_id";
+   d2rq:property vocab:mutation_id .
+
+map:ssm_mutation_assembly_version a d2rq:PropertyBridge;
+   d2rq:belongsToClassMap map:ssm_mutation;
+   d2rq:column "ssm_mutation.assembly_version";
+   d2rq:property vocab:assembly_version .
+
+map:ssm_mutation_chromosome a d2rq:PropertyBridge;
+   d2rq:belongsToClassMap map:ssm_mutation;
+   d2rq:column "ssm_mutation.chromosome";
+   d2rq:property vocab:chromosome .
+
+map:ssm_mutation_chromosome_end a d2rq:PropertyBridge;
+   d2rq:belongsToClassMap map:ssm_mutation;
+   d2rq:column "ssm_mutation.chromosome_end";
+   d2rq:property vocab:chromosome_end .
+
+map:ssm_mutation_chromosome_start a d2rq:PropertyBridge;
+   d2rq:belongsToClassMap map:ssm_mutation;
+   d2rq:column "ssm_mutation.chromosome_start";
+   d2rq:property vocab:chromosome_start .
+
+map:ssm_mutation_chromosome_strand a d2rq:PropertyBridge;
+   d2rq:belongsToClassMap map:ssm_mutation;
+   d2rq:column "ssm_mutation.chromosome_strand";
+   d2rq:property vocab:chromosome_strand .
+
+map:ssm_mutation_mutated_from_allele a d2rq:PropertyBridge;
+   d2rq:belongsToClassMap map:ssm_mutation;
+   d2rq:column "ssm_mutation.mutated_from_allele";
+   d2rq:property vocab:mutated_from_allele .
+
+map:ssm_mutation_mutated_to_allele a d2rq:PropertyBridge;
+   d2rq:belongsToClassMap map:ssm_mutation;
+   d2rq:column "ssm_mutation.mutated_to_allele";
+   d2rq:property vocab:mutated_to_allele .
+
+map:ssm_mutation_mutation_type a d2rq:PropertyBridge;
+   d2rq:belongsToClassMap map:ssm_mutation;
+   d2rq:column "ssm_mutation.mutation_type";
+   d2rq:property vocab:mutation_type .
+
+map:ssm_mutation_reference_genome_allele a d2rq:PropertyBridge;
+   d2rq:belongsToClassMap map:ssm_mutation;
+   d2rq:column "ssm_mutation.reference_genome_allele";
+   d2rq:property vocab:reference_genome_allele .
+
+map:database a d2rq:Database;
+   d2rq:jdbcDSN "jdbc:mysql://localhost/linked_icgc_20";
+   d2rq:jdbcDriver "com.mysql.jdbc.Driver";
+   d2rq:password "p";
+   d2rq:username "linked_icgc_20" .
+
+map:project a d2rq:ClassMap;
+   d2rq:class <Project>;
+   d2rq:dataStorage map:database;
+   d2rq:uriPattern "Project/@@project.project_code@@" .
+
+map:ssm_effect a d2rq:ClassMap;
+   d2rq:class <Effect>;
+   d2rq:dataStorage map:database;
+   d2rq:uriPattern "Effect/@@ssm_effect.mutation_id@@_@@ssm_effect.transcript_affected@@" .
+
+map:ssm_mutation a d2rq:ClassMap;
+   d2rq:class <Mutation>;
+   d2rq:dataStorage map:database;
+   d2rq:uriPattern "Mutation/@@ssm_mutation.mutation_id@@" .
+
+map:donor a d2rq:ClassMap;
+   d2rq:class <Donor>;
+   d2rq:dataStorage map:database;
+   d2rq:uriPattern "Donor/@@donor.donor_id@@" .
+
+map:ssm_detection a d2rq:ClassMap;
+   d2rq:class <Detection>;
+   d2rq:dataStorage map:database;
+   d2rq:uriPattern "Detection/@@ssm_detection.donor_id@@_@@ssm_detection.mutation_id@@_@@ssm_detection.specimen_id@@" .
