@@ -17,9 +17,9 @@ date
 #echo -e "\n\nLoading reactome..."
 #time ~/virtuoso.sh loaddir ~/linked-icgc/output Homo_sapiens.owl http://purl.uniprot.org/ 
 echo -e "\n\nLoading all ICGC data..."
-time ~/virtuoso.sh loaddir ~/linked-icgc/output ICGC*.nt http://icgc.link/release_18
-time ~/virtuoso.sh loaddir ~/linked-icgc/output license.nt http://icgc.link/release_18
-time ~/virtuoso.sh loaddir ~/linked-icgc/output x-gene.nt http://icgc.link/release_18
+time ~/virtuoso.sh loaddir ~/linked-icgc_20/output ICGC*.nt http://icgc.link/release_20
+time ~/virtuoso.sh loaddir ~/data license.nt http://icgc.link/release_20
+#time ~/virtuoso.sh loaddir ~/linked-icgc_20/output x-gene.nt http://icgc.link/release_20
 
 date
 
