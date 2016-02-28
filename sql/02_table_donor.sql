@@ -1,6 +1,6 @@
 DROP TABLE IF EXISTS `donor`;
 CREATE TABLE `donor` (
-  `icgc_donor_id` varchar(255) DEFAULT NULL,
+  `donor_id` varchar(255) DEFAULT NULL, -- icgc_donor_id
   `project_code` varchar(255) DEFAULT NULL,
   `study_donor_involved_in` varchar(255) DEFAULT NULL,
   `submitted_donor_id` varchar(255) DEFAULT NULL,
